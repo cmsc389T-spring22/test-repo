@@ -2,11 +2,11 @@ name: clean
 on: 
   workflow_dispatch:   
 jobs:
-  job_one:
+  clean:
     name: Clean
     runs-on: ubuntu-latest
     steps:
-      - name: testing
+      - name: Clean Server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }} 

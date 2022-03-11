@@ -2,11 +2,11 @@ name: clone
 on: 
   workflow_dispatch:   
 jobs:
-  job_one:
+  clone:
     name: Clone
     runs-on: ubuntu-latest
     steps:
-      - name: testing
+      - name: Create Initial Deployment
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }} 

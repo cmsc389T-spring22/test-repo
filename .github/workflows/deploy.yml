@@ -4,11 +4,11 @@ on:
     branches: [main]
 #  workflow_dispatch: # uncomment this line and comment above to disable deploy on push
 jobs:
-  job_one:
+  deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: testing
+      - name: Update Deployment
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }} 

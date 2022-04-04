@@ -20,6 +20,8 @@ services:
       dockerfile: Dockerfile
     image: file-writer
     container_name: file-writer
+    volumes:
+      - file-writer-volume:/home/myuser/app
     restart: unless-stopped
 
   static-webpage:
@@ -31,3 +33,12 @@ services:
     image: static-webpage
     container_name: static-webpage
     restart: unless-stopped
+
+volumes:
+  file-writer-volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: /absolute/path/to/FileWriter/
+      o: bind
+

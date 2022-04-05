@@ -16,16 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build File Writer Container
+      - name: Build Calculator Container
         run: |
           cd Calculator
           docker build . --tag calculator
           
-  build-file-writer:
+  build-static-webpage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build File Writer Container
+      - name: Build Static Webpage Container
         run: |
           cd StaticWebpage
           docker build . --tag static-webpage

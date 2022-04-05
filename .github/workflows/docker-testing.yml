@@ -29,3 +29,13 @@ jobs:
         run: |
           cd StaticWebpage
           docker build . --tag static-webpage
+  
+  docker-compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Run All Containers
+        run: |
+          sed "s/device:.*/device:$(pwd | sed 's/\//\\\//g')\/FileWriter/g" docker-compose.yml
+          cat docker-compose.yml
+          docker-compose up -d

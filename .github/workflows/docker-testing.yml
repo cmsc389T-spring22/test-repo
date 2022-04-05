@@ -11,3 +11,21 @@ jobs:
         run: |
           cd FileWriter
           docker build . --tag file-writer
+
+  build-calculator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build File Writer Container
+        run: |
+          cd Calculator
+          docker build . --tag calculator
+          
+  build-file-writer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build File Writer Container
+        run: |
+          cd StaticWebpage
+          docker build . --tag static-webpage

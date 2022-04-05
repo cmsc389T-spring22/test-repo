@@ -36,6 +36,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build and Run All Containers
         run: |
-          sed "s/device:.*/device:$(pwd | sed 's/\//\\\//g')\/FileWriter/g" docker-compose.yml
+          sed -i "s/device:.*/device:$(pwd | sed 's/\//\\\//g')\/FileWriter/g" docker-compose.yml
           cat docker-compose.yml
           docker-compose up -d
